@@ -6,19 +6,19 @@ import starlight from '@astrojs/starlight';
 export default defineConfig({
 	integrations: [
 		starlight({
-			title: 'My Docs',
-			social: [{ icon: 'github', label: 'GitHub', href: 'https://github.com/withastro/starlight' }],
+			title: "Guia d'estils de Drafter",
+			defaultLocale: 'root',
+			locales: {
+				root: { label: 'Català', lang: 'ca' },
+			},
 			sidebar: [
 				{
-					label: 'Guides',
-					items: [
-						// Each item here is one entry in the navigation menu.
-						{ label: 'Example Guide', slug: 'guides/example' },
-					],
+					label: 'Primers passos',
+					items: [{ autogenerate: { directory: 'getting-started' } }],
 				},
 				{
-					label: 'Reference',
-					items: [{ autogenerate: { directory: 'reference' } }],
+					label: 'Components',
+					items: [{ autogenerate: { directory: 'components' } }],
 				},
 			],
 		}),
